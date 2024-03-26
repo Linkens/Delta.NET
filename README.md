@@ -1,6 +1,6 @@
 # Delta.NET
 
-### .NET package dedicated to munipulate [Delta](https://github.com/quilljs/delta) objects.
+### .NET package dedicated to manipulate [Delta](https://github.com/quilljs/delta) objects.
 
 
 ##### Features
