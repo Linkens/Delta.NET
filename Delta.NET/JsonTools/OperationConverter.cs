@@ -22,7 +22,9 @@ namespace DeltaNET.JsonTools
                     reader.Read();
                     if (reader.TokenType == JsonTokenType.PropertyName && reader.GetString() == "attributes")
                     {
+                        reader.Read();
                         Op.Attributes = GetAttributes(ref reader);
+                        reader.Read();
                     }
                     return Op;
                 case "delete":

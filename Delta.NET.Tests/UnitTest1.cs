@@ -26,7 +26,7 @@ namespace DeltaNET.Tests
             var Delta = JsonSerializer.Deserialize<Delta>(Json);
             var Op = new RetainOperation { Value = 1 };
             Op.AddString("align", "center");
-            var Delta2 = new Delta { Operations = new() { new RetainOperation { Value = 16 }, Op } };
+            var Delta2 = new Delta { Operations = new() { new RetainOperation { Value = 16 }, Op, new RetainOperation { Value = 16 } } };
             var Result = Delta.Compose(Delta2);
         }
     }
