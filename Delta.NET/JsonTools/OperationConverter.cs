@@ -20,6 +20,12 @@ namespace DeltaNET.JsonTools
                 case "retain":
                     var Op = new RetainOperation() { Value = reader.GetInt32() };
                     reader.Read();
+                    if (reader.TokenType == JsonTokenType.PropertyName && reader.GetString() == "attributes")
+                    {
+                        //We don't need this;
+                        while (reader.TokenType != JsonTokenType.EndObject) reader.Read();
+                        reader.Read(); //Close attribute
+                    }
                     return Op;
                 case "delete":
                     var OpDelete = new DeleteOperation() { Value = reader.GetInt32() };

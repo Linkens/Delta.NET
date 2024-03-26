@@ -5,6 +5,8 @@ VisualStudioVersion = 17.8.34525.116
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Delta.NET", "Delta.NET\Delta.NET.csproj", "{30839317-9DE1-4947-A416-E28074510A56}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Delta.NET.Tests", "Delta.NET.Tests\Delta.NET.Tests.csproj", "{7DDF3C22-F218-423D-B94D-D92EBF7F1788}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{30839317-9DE1-4947-A416-E28074510A56}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{30839317-9DE1-4947-A416-E28074510A56}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{30839317-9DE1-4947-A416-E28074510A56}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DDF3C22-F218-423D-B94D-D92EBF7F1788}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DDF3C22-F218-423D-B94D-D92EBF7F1788}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DDF3C22-F218-423D-B94D-D92EBF7F1788}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DDF3C22-F218-423D-B94D-D92EBF7F1788}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
