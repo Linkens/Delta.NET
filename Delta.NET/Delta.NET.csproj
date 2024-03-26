@@ -7,10 +7,10 @@
 		<Company>SoftwareFactory</Company>
 		<Authors>Linkens</Authors>
 		<Description>Tool to manipulate Quill.js Delta json objects</Description>
-		<PackageProjectUrl>https://github.com/Linkens/DeltaNET</PackageProjectUrl>
+		<PackageProjectUrl>https://github.com/Linkens/Delta.NET</PackageProjectUrl>
 		<PackageIcon>Quill.png</PackageIcon>
 		<RepositoryType>git</RepositoryType>
-		<RepositoryUrl>https://github.com/Linkens/DeltaNET</RepositoryUrl>
+		<RepositoryUrl>https://github.com/Linkens/Delta.NET</RepositoryUrl>
 		<PackageTags>Quilljs;Delta</PackageTags>
 		<AssemblyVersion>1.8.2.0</AssemblyVersion>
 		<FileVersion>$(AssemblyVersion)</FileVersion>
