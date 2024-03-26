@@ -1,7 +1,7 @@
 ﻿using System.Text;
 using System.Text.Json.Serialization;
 
-namespace Delta.NET
+namespace DeltaNET
 {
     public class InsertDataCustom : InsertData
     {

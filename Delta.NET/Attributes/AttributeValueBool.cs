@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace Delta.NET
+namespace DeltaNET
 {
     public class AttributeValueBool : AttributeValue
     {
