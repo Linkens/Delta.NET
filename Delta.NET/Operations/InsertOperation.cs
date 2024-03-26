@@ -1,28 +1,23 @@
-﻿using System.Text;
+﻿using System.Collections.Generic;
+using System.Text;
 using System.Text.Json.Serialization;
 
 namespace DeltaNET
 {
-    public class InsertOperation : Operation
+    public class InsertOperation : AttributeOperation
     {
         [JsonPropertyName("insert")]
         public InsertData? Insert { get; set; }
-        [JsonPropertyName("attributes"), JsonExtensionData]
-        public Dictionary<string, AttributeValue> Attributes { get; set; }
+
         public override string ToString()
         {
             var b = new StringBuilder();
             if (Insert != null)
                 b.Append(Insert.ToString());
-            if (Attributes.Any())
-            {
-                if (Insert != null)
-                    b.Append(" | ");
-                foreach (var item in Attributes)
-                {
-                    b.Append($"{item.Key} = {item.Value} ");
-                }
-            }
+            if (Attributes != null)
+                b.Append(" | ");
+            b.Append(base.ToString());
+
             return b.ToString();
         }
         public override int GetLength()

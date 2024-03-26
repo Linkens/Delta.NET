@@ -56,7 +56,11 @@ namespace DeltaNET
                         NewDelta.Operations.Add(rMine);
                     }
                     else
-                        NewDelta.Operations.Add(MineOp);
+                    {
+                        var Ao = MineOp as AttributeOperation;
+                        Ao.Attributes = Compose(Ao.Attributes, rOther.Attributes);
+                        NewDelta.Operations.Add(Ao);
+                    }
                 }
                 if (!ItOther.HasNext())
                 {
@@ -71,6 +75,24 @@ namespace DeltaNET
             }
 
             return NewDelta;
+        }
+        protected Dictionary<string, AttributeValue> Compose(Dictionary<string, AttributeValue> Mine, Dictionary<string, AttributeValue> Other)
+        {
+            if (Mine == null)
+            {
+                return Other;
+            }
+            else if (Other == null)
+            {
+                return Mine;
+            }
+            var New = Other.ToDictionary(x => x.Key, x => x.Value.Clone());
+            foreach (var item in Mine)
+            {
+                if (!Other.ContainsKey(item.Key))
+                    New.Add(item.Key, item.Value);
+            }
+            return New;
         }
 
     }
