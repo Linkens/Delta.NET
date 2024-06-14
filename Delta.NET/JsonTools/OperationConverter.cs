@@ -145,10 +145,10 @@ namespace DeltaNET.JsonTools
                 }
                 else if (insert.Insert is InsertDataCustom c)
                 {
-                    writer.WriteStartObject();
                     writer.WritePropertyName("insert");
                     writer.WriteStartObject();
                     writer.WritePropertyName(c.Type);
+                    writer.WriteStartObject();
                     foreach (var item in c.Attributes)
                     {
                         if (item.Value is AttributeValueBool b)
