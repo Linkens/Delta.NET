@@ -1,3 +1,4 @@
+﻿using System.Drawing;
 using System.Text.Json;
 
 namespace DeltaNET.Tests
@@ -28,6 +29,13 @@ namespace DeltaNET.Tests
             Op.AddString("align", "center");
             var Delta2 = new Delta { Operations = new() { new RetainOperation { Value = 16 }, Op, new RetainOperation { Value = 16 } } };
             var Result = Delta.Compose(Delta2);
+        }
+        [TestMethod]
+        public void Combine()
+        {
+            var D1 = JsonSerializer.Deserialize<Delta>(File.ReadAllText("./Files/json01.json"));
+            var D2 = JsonSerializer.Deserialize<Delta>(File.ReadAllText("./Files/json02.json"));
+            var D3 = D1.Compose(D2);
         }
     }
 }

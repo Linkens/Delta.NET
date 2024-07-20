@@ -52,8 +52,11 @@ namespace DeltaNET
                 {
                     if (MineOp is RetainOperation rMine)
                     {
-                        rMine.Value = SharedLength;
-                        NewDelta.Operations.Add(rMine);
+                        if (SharedLength != int.MaxValue)
+                        {
+                            rMine.Value = SharedLength;
+                            NewDelta.Operations.Add(rMine);
+                        }
                     }
                     else
                     {
