@@ -14,6 +14,7 @@
   <ItemGroup>
     <None Remove="Files\json01.json" />
     <None Remove="Files\json02.json" />
+    <None Remove="Files\json03.json" />
   </ItemGroup>
 
   <ItemGroup>
@@ -29,6 +30,9 @@
 
   <ItemGroup>
     <Content Include="Files\json01.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\json03.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Files\json02.json">

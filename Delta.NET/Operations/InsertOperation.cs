@@ -29,7 +29,7 @@ namespace DeltaNET
         }
         public bool IsCompatible(InsertOperation Other)
         {
-            return Insert is InsertDataString && Other.Insert is InsertDataString && Other.Attributes == Attributes;
+            return Insert is InsertDataString && Other.Insert is InsertDataString && SameAttributes(Other);
         }
         public void Combine(InsertOperation Other)
         {

@@ -35,7 +35,8 @@ namespace DeltaNET.Tests
         {
             var D1 = JsonSerializer.Deserialize<Delta>(File.ReadAllText("./Files/json01.json"));
             var D2 = JsonSerializer.Deserialize<Delta>(File.ReadAllText("./Files/json02.json"));
-            var D3 = D1.Compose(D2);
+            var D3 = JsonSerializer.Deserialize<Delta>(File.ReadAllText("./Files/json03.json"));
+            var DOut = D1.Compose(D2).Compose(D3);
         }
     }
 }

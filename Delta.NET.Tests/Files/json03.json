@@ -1,9 +1,9 @@
 {
   "ops": [
-    { "retain": 603 },
+    { "retain": 605 },
     {
       "attributes": { "color": "black" },
-      "insert": " "
+      "insert": "e"
     }
   ]
 }
