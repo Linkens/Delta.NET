@@ -27,6 +27,17 @@ namespace DeltaNET
             else
                 return 1;
         }
+        public bool IsCompatible(InsertOperation Other)
+        {
+            return Insert is InsertDataString && Other.Insert is InsertDataString && Other.Attributes == Attributes;
+        }
+        public void Combine(InsertOperation Other)
+        {
+            if (Insert is InsertDataString i && Other.Insert is InsertDataString o)
+            {
+                i.Value += o.Value;
+            }
+        }
 
         public override Operation Clone()
         {

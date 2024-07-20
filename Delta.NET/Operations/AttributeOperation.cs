@@ -19,6 +19,20 @@ namespace DeltaNET
             }
             return b.ToString();
         }
+        public bool SameAttributes(AttributeOperation Other)
+        {
+            if (Attributes == null && Other.Attributes == null) return true;
+            if (Attributes == null || Other.Attributes == null) return false;
+            if (Attributes.Count != Other.Attributes.Count) return false;
+            var IsSame = true;
+            for (int i = 0; i < Attributes.Count; i++)
+            {
+                var MineAtt = Attributes.ElementAt(i);
+                var OtherAtt = Other.Attributes.ElementAt(i);
+                IsSame = IsSame && (MineAtt.Key == OtherAtt.Key && MineAtt.Value == OtherAtt.Value);
+            }
+            return IsSame;
+        }
         public void AddString(string Key, string Value)
         {
             if (Attributes == null) Attributes = new();

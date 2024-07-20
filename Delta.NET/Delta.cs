@@ -35,9 +35,13 @@ namespace DeltaNET
             while (ItMine.HasNext() || ItOther.HasNext() || DoOnce)
             {
                 DoOnce = false;
-                if (ItOther.Current is InsertOperation)
+                if (ItOther.Current is InsertOperation otherInsert)
                 {
-                    NewDelta.Operations.Add(ItOther.Current.Clone());
+                    var o = NewDelta.Operations.LastOrDefault();
+                    if (o != null && o is InsertOperation i && i.IsCompatible(otherInsert))
+                        i.Combine(otherInsert);
+                    else
+                        NewDelta.Operations.Add(ItOther.Current.Clone());
                     ItOther.Next();
                 }
                 else if (ItMine.Current is DeleteOperation)
