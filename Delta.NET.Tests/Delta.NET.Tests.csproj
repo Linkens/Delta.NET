@@ -12,6 +12,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Files\delete01.json" />
+    <None Remove="Files\delete02.json" />
+    <None Remove="Files\delete03.json" />
     <None Remove="Files\json01.json" />
     <None Remove="Files\json02.json" />
     <None Remove="Files\json03.json" />
@@ -29,6 +32,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="Files\delete03.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\delete02.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\delete01.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Files\json01.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

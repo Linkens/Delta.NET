@@ -41,7 +41,7 @@ namespace DeltaNET
             if (Length >= OpLength - Offset)
             {
                 Length = OpLength - Offset;
-                Index++;
+                    Index++;
                 if (HasNext())
                     Current = Ops[Index];
                 else Current = null;

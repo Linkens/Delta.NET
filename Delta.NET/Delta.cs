@@ -1,4 +1,5 @@
-﻿using System.Text.Json.Serialization;
+﻿using System.Text;
+using System.Text.Json.Serialization;
 
 namespace DeltaNET
 {
@@ -68,6 +69,12 @@ namespace DeltaNET
                         Ao.Attributes = Compose(Ao.Attributes, rOther.Attributes);
                         NewDelta.Operations.Add(Ao);
                     }
+                }else if(OtherOp is DeleteOperation dOther)
+                {
+                    if(MineOp is RetainOperation rMine)
+                        NewDelta.Operations.Add(dOther.Clone());
+                    //else if(MineOp is InsertOperation iMine)
+                    //    NewDelta.Operations.Add(ItOther.Next());
                 }
                 if (!ItOther.HasNext())
                 {
@@ -75,6 +82,15 @@ namespace DeltaNET
                     if (ItMine.Offset != 0)
                     {
                         NewDelta.Operations.Add(ItMine.Next());
+                    }
+                    if(ItMine.Current is DeleteOperation MineDelete)
+                    {
+                        var LastNew = NewDelta.Operations.LastOrDefault();
+                        if(LastNew != null && LastNew is DeleteOperation NewDel)
+                        {
+                            NewDel.Value += MineDelete.Value;
+                            ItMine.Next();
+                        }
                     }
                     NewDelta.Operations.AddRange(ItMine.Rest());
                     break;
